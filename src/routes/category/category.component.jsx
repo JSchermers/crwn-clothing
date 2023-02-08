@@ -13,10 +13,10 @@ const Category = () => {
 
     const [products, setProducts ] = useState(categoriesMap[category]);
 
-    console.log("render/re-rendering category component")
+    // console.log("render/re-rendering category component")
 
     useEffect(() => {
-        console.log("effect fired calling setproducts")
+        // console.log("effect fired calling setproducts")
         setProducts(categoriesMap[category])
     }, [category, categoriesMap])
 
