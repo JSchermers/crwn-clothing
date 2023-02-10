@@ -83,4 +83,4 @@ for fully working also add
 yarn 
 npm -g yarn
 
-yarn add firebase sass redux redux-logger reselect
+yarn add firebase sass redux redux-logger reselect redux-persist redux thunk
