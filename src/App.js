@@ -6,8 +6,8 @@ import Shop from "./routes/shop/shop.component";
 import CheckOut from "./routes/checkout/checkout.component";
 
 import { useEffect } from 'react';
-import { onAuthStateChangedListener, createUserDocumentFromAuth } from "./utils/firebase/firebase.utils";
-import { setCurrentUser } from "./store/user/user.actions";
+import { onAuthStateChangedListener, createUserDocumentFromAuth, getCurrentUser } from "./utils/firebase/firebase.utils";
+import { checUserSession } from "./store/user/user.actions";
 import { useDispatch } from "react-redux";
 
 const App = () => {
@@ -15,14 +15,18 @@ const App = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChangedListener((user) => {
-        if(user) {
-            createUserDocumentFromAuth(user);
-        }
-        dispatch(setCurrentUser(user));
-    });
+// worked with listener
 
-    return unsubscribe
+    // const unsubscribe = onAuthStateChangedListener((user) => {
+    //     if(user) {
+    //         createUserDocumentFromAuth(user);
+    //     }
+    //     dispatch(setCurrentUser(user));
+    // });
+
+    // return unsubscribe
+    // getCurrentUser().then((user) => console.log(user))
+    dispatch(checUserSession())
 }, [])
   
   return (

@@ -1,4 +1,5 @@
 import "../button/button.styles.scss"
+import "../spinner/spinner.styles.scss"
 
 const btnTypes = {
     google: 'google-sign-in',
@@ -6,9 +7,12 @@ const btnTypes = {
 
 }
 
-const Button = ({children, buttonType, ...otherProps}) => {
-    return <button {...otherProps} className={`button-container ${btnTypes[buttonType]}`}>
-        {children}
+const Button = ({children, buttonType, isLoading, ...otherProps}) => {
+    return <button disabled={isLoading} {...otherProps} className={`button-container ${btnTypes[buttonType]}`}>
+         { isLoading ? <div>
+            <div className="spinnerContainer"></div>
+        </div> : children }
+            
     </button>
 }
 

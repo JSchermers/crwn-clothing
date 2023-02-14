@@ -9,6 +9,7 @@ export const fetchCategoriesSuccess = (categoriesArray) => createAction(CATEGORY
 
 export const fetchCategoriesFail = (error) => createAction(CATEGORY_ACTION_TYPES.FETCH_CATEGORIES_FAIL, error)
 
+// This code is an asynchronous function that dispatches an action to start fetching categories, then attempts to get the categories and documents from an API. If successful, it dispatches an action to indicate success and passes the categories array. If unsuccessful, it dispatches an action to indicate failure and passes the error.
 export const fetchCategoriesAsync = () => async (dispatch) => {
     dispatch(fetchCategoriesStart())
     try {

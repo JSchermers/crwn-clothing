@@ -83,4 +83,7 @@ for fully working also add
 yarn 
 npm -g yarn
 
-yarn add firebase sass redux redux-logger reselect redux-persist redux thunk
+yarn add firebase sass redux redux-logger reselect redux-persist redux thunk redux-saga @stripe/stripe-js @stripe/react-stripe-js stripe dotenv
+
+
+npm -g netlify-cli
